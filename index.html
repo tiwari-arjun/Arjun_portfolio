@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="lightbox.min.css" />
+    <link rel="stylesheet" href="utilities.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="ico" sizes="32x32" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>www.ArjunTiwari.com</title>
+  </head>
+  <body id="home">
+    <header class="hero">
+      <div id="navbar" class="navbar top">
+        <h1 class="logo">
+          <span class="text-primary">Arjun  </span
+          >Tiwari
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+              <a href="college.html">Education </a>
+            <ul class="dropdown">
+             
+              <li><a href="project.html">- Project</a></li>
+            </ul>
+            </li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+        </nav>
+      </div>
+      <div class="content">
+        <h1 >HEY !!  <span class="header"></span></h1>
+        <p> Myself Arjun Tiwari. I'm a Student pursing at Class-11 Science as Computer Science Major.</p>
+        <a href="about.html" class="btn"
+          ><i class="fas fa-chevron-right"></i>ABOUT ME</a
+        >
+      </div>
+     
+    </header>
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove("top");
+          if (!scrolled) {
+            navbar.style.transform = "translateY(-70px)";
+          }
+          setTimeout(function () {
+            navbar.style.transform = "translateY(0)";
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add("top");
+          scrolled = false;
+        }
+      };
+      // Smooth Scrolling
+      $("#navbar a, .btn").on("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

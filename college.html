@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/all.min.css"
+    />
+    <link rel="stylesheet" href="lightbox.min.css" />
+    <link rel="stylesheet" href="utilities.css" />
+    <link rel="stylesheet" href="college.css" />
+    <link rel="icon" type="ico" sizes="32x32" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>www.ArjunTiwari.com</title>
+  </head>
+
+  <header class="hero">
+    <div id="navbar" class="navbar top">
+      <h1 class="logo">
+        <span class="text-primary">Arjun  </span
+        >Tiwari
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="college.html">Education </a>
+          <ul class="dropdown">
+          
+            <li><a href="project.html">- Project</a></li>
+          </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </li>
+  </nav>
+    </div>
+  </header>
+
+  <body id="home">
+  
+    <div class="container">
+     <main class="row">
+     
+<section class="col" id="part1">
+    <header class="title">
+        <h2>Education</h2>
+    </header>
+    <div class="contents">
+        <div class="box">
+            <h4>Pionner's Higher Academy</h4>
+            <h3>2024 - 2022</h3>
+            <p>I'm Joined Pionner's Higher Education Academy for completing my further +2 Science.
+               
+            
+                
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>Shree Rastrya Mavi Secondary School</h4>
+            <h3>2022 - 2019</h3>
+            <p>I am passed out from Shree Rastrya Mavi at in 2022. I spend around 2 years there for 
+              completing my S.E.E (Secondary Education Examination)
+            </p>
+        </div>
+
+        <div class="box">
+            <h4>Sagarmatha Higher Secondary School</h4>
+            <h3>2019 - 2009</h3>
+            <p>I started my school jouney from Sagarmatha higher boarding school. It's been a great memories there. I studies around 10 years there.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!--Education Ends Here-->
+
+<section class="col">
+    <header class="title">
+        <h2>Additional</h2>
+    </header>
+    <div class="contents">
+        <div class="box">
+            <h4>PDCA</h4>
+            <h3>2023 - 2024</h3>
+            <p>I joined PDCA (Professional Diploma in Computer Application) at the beggining of Grade-11. I recently completed my diploma course by which I have the deep knowlege of tally, Programming, Hardware and Graphics.</p>
+        </div>
+
+        <div class="box">
+            <h4>2022-2024</h4>
+            <h3>Web - Development</h3>
+            <p>After Completing S.E.E in the free time of 3 months. I started learning coding (starting with basic html and css). After learning enough coding I started making self-project like e-commerce website, car-showroom, portfolio, daily routine, task-manager and many more.</p>
+        </div>
+
+    </div>
+</section>
+
+
+     </main>
+    </div>
+
+
+
+
+
+
+    
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      let scrolled = false;
+
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          navbar.classList.remove("top");
+          if (!scrolled) {
+            navbar.style.transform = "translateY(-70px)";
+          }
+          setTimeout(function () {
+            navbar.style.transform = "translateY(0)";
+            scrolled = true;
+          }, 200);
+        } else {
+          navbar.classList.add("top");
+          scrolled = false;
+        }
+      };
+      // Smooth Scrolling
+      $("#navbar a, .btn").on("click", function (e) {
+        if (this.hash !== "") {
+          e.preventDefault();
+
+          const hash = this.hash;
+
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top - 100,
+            },
+            800
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
